@@ -21,6 +21,7 @@ class LLVM(ConanFile):
     
     folder_name = "llvm"
     
+    # clone the source
     def source(self):
         self.run("git clone https://github.com/llvm-mirror/llvm -b release_39 --depth 1")
         
