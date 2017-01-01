@@ -7,7 +7,7 @@ python: 3.5
 env:
     global:
         - CONAN_UPLOAD=1
-        - CONAN_REFERENCE=llvm/3.9.1
+        - CONAN_REFERENCE=llvm/3.9.0
         - CONAN_USERNAME=russelltg
         - CONAN_CHANNEL=stable
         - CONAN_TOTAL_PAGES=4
