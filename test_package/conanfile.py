@@ -6,7 +6,7 @@ username = os.getenv("CONAN_USERNAME", "russelltg")
 
 class LLVMTest(ConanFile):
     name = "llvmTest"
-    requires = "llvm/3.9.1@{}/{}".format(username, channel)
+    requires = "llvm/3.9.0@{}/{}".format(username, channel)
     
     
     settings = "os", "arch", "compiler", "build_type"
