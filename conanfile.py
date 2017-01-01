@@ -8,7 +8,7 @@ import sys
 
 class LLVM(ConanFile):
     name = "llvm"
-    version = "3.9.1"
+    version = "3.9.0"
     generators = "cmake"
     
     url = "https://github.com/russelltg/llvm-conan"
@@ -19,15 +19,10 @@ class LLVM(ConanFile):
     options = {"shared": [True, False]}
     default_options = "shared=True"
     
-    folder_name = "llvm-{}.src".format(version)
+    folder_name = "llvm"
     
     def source(self):
-        tarName = "{}.tar.xz".format(self.folder_name)
-        tarUrl = "http://releases.llvm.org/{}/{}".format(self.version, tarName)
-        tools.download(tarUrl, tarName)
-        self.output.info("Using version {} of python".format(sys.version_info))
-        with tarfile.open(tarName, "r:xz") as tar:
-            tar.extractall()
+        self.run("git clone https://github.com/llvm-mirror/llvm -b release_39 --depth 1")
         
     def build(self):
         cmake = CMake(self.settings)
