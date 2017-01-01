@@ -24,7 +24,7 @@ class LLVM(ConanFile):
         tarName = "{}.tar.xz".format(self.folder_name)
         tarUrl = "http://releases.llvm.org/{}/{}".format(self.version, tarName)
         tools.download(tarUrl, tarName)
-        with tarfile.open(tarName, "r:xz") as tar:
+        with tarfile.open(tarName) as tar:
             tar.extractall()
         
     def build(self):
