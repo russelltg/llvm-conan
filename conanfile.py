@@ -47,6 +47,7 @@ class LLVM(ConanFile):
         self.copy(pattern="*", dst="", src=os.path.join(self.conanfile_directory, "install"))
         
     def package_info(self):
-        self.env.path.append(os.path.join(self.package_folder, "bin"))
+        self.env_info.path.append(os.path.join(self.package_folder, "bin"))
+        self.env_info.LLVM_DIR = self.package_folder # for cmake finding
         
     
