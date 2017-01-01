@@ -1,4 +1,5 @@
 from conans import CMake, ConanFile
+import os
 
 channel = os.getenv("CONAN_CHANNEL", "stable")
 username = os.getenv("CONAN_USERNAME", "russelltg")
