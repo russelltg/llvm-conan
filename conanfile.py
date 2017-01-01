@@ -4,6 +4,7 @@ import tarfile
 import os
 import platform
 import multiprocessing
+import sys
 
 class LLVM(ConanFile):
     name = "llvm"
@@ -24,6 +25,7 @@ class LLVM(ConanFile):
         tarName = "{}.tar.xz".format(self.folder_name)
         tarUrl = "http://releases.llvm.org/{}/{}".format(self.version, tarName)
         tools.download(tarUrl, tarName)
+        self.output.info("Using version {} of python".format(sys.version_info))
         with tarfile.open(tarName, "r:xz") as tar:
             tar.extractall()
         
