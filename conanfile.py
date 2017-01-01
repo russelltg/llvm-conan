@@ -1,10 +1,8 @@
 from conans import ConanFile, CMake
 import conans.tools as tools
-import tarfile
 import os
 import platform
 import multiprocessing
-import sys
 
 class LLVM(ConanFile):
     name = "llvm"
