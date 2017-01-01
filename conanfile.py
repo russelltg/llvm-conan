@@ -46,6 +46,7 @@ class LLVM(ConanFile):
     def package(self):
         self.copy(pattern="*", dst="", src=os.path.join(self.conanfile_directory, "install"))
         
-        
+    def package_info(self):
+        self.env.path.append(os.path.join(self.package_folder, "bin"))
         
     
