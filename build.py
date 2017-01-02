@@ -5,7 +5,7 @@ if __name__ == "__main__":
     builder = ConanMultiPackager()
     
     if platform.system() == "Windows":
-         for shared in [True, False]:
+         for shared in [False]: # TODO: add shared
             for build_type in ["Debug", "Release"]:
                 for vers in builder.visual_versions:
                     for runtimes in builder.visual_runtimes:
