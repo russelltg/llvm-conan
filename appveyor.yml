@@ -54,5 +54,5 @@ install:
     - conan user
     
 test_script:
-    - python run.py
+    - python build.py
     
