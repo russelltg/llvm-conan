@@ -32,7 +32,7 @@ class LLVM(ConanFile):
         else:
             sharedSetting = "OFF"
             
-        self.run('cmake {} {} -DCMAKE_INSTALL_PREFIX={} -DBUILD_SHARED_LIBS={} -DLLVM_TARGETS_TO_BUILD="X86;X86_64"'.format(
+        self.run('cmake {} {} -DCMAKE_INSTALL_PREFIX={} -DBUILD_SHARED_LIBS={} -DLLVM_TARGETS_TO_BUILD="X86"'.format(
             os.path.join(self.conanfile_directory, self.folder_name), 
             cmake.command_line, 
             os.path.join(self.conanfile_directory, "install"), 
